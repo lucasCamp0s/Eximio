@@ -162,6 +162,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 			}
 		}catch(Exception e) {
 			new  RuntimeException("Dados Inválidos");
+	//comentario
 		}
 
 
