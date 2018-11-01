@@ -1,6 +1,7 @@
 package usuario;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -83,6 +84,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		btn_cadastro = new JButton("CADASTRAR");
 		btn_cadastro.setBounds(80,520,150,30);
 		btn_cadastro.setBackground(new Color(103, 218, 199));
+		btn_cadastro.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btn_cadastro.setForeground(Color.WHITE);
 		btn_cadastro.addActionListener(this);
 		add(btn_cadastro);
@@ -130,8 +132,8 @@ public class TelaCadastro extends JFrame implements ActionListener {
 					validaEmail = false;
 					
 				}
-				if(txt_senha.getText().equals("") && txt_senha.getText().length() < 6 && txt_senha.getText().length() > 60) {
-					JOptionPane.showMessageDialog(null, "Informe com mais Segurança");
+				if(txt_senha.getText().equals("") ||  txt_senha.getText().length() < 6 || txt_senha.getText().length() > 30) {
+					JOptionPane.showMessageDialog(null, "Informe uma senha com mais Segurança");
 					txt_senha.requestFocus();
 					validaSenha = false;
 				}
