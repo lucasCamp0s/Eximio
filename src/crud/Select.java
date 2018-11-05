@@ -34,8 +34,8 @@ public class Select {
 					ResultSet rs = ps.executeQuery();
 					
 					while(rs.next()){
-						System.out.println(rs.getString("email"));
-						System.out.println(rs.getString("senha"));
+						//System.out.println(rs.getString("email"));
+						//System.out.println(rs.getString("senha"));
 						tipoRetorno = true;
 					}
 					connection.close();

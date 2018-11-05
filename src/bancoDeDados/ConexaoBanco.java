@@ -17,11 +17,11 @@ public class ConexaoBanco {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			String nomeServidor = "esn509vmysql"; // caminhao do bd
+			String nomeServidor = "127.0.0.1:3307"; // caminhao do bd
 			String mydatabase = "eximio"; // nome do seu bancp de dados
 			String url = "jdbc:mysql://" + nomeServidor + "/" + mydatabase;
-			String username = "aluno"; //nome usuario do bd
-			String password = "Senai1234"; //senha
+			String username = "root"; //nome usuario do bd
+			String password = ""; //senha
 			
 			connection = (Connection) DriverManager.getConnection(url, username, password);
 		

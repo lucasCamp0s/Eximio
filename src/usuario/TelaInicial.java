@@ -34,11 +34,11 @@ public class TelaInicial extends JFrame{
 	private JButton btn_educacao,btn_PequenaEmpresa,btn_GrandeEmpresa,btn_UsoPessoal;
 	JFrame tela;
 	JLabel Jimagem;
-	ImageIcon icon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\cadeado.png");
-	ImageIcon haticon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\hat.png");
-	ImageIcon handbagicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\handbag.png");	
-	ImageIcon companyicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\company.png");
-	ImageIcon peopleicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\people.png");
+	ImageIcon icon = new ImageIcon("C:\\programacao\\java\\Eximio\\src\\img\\cadeado.png");
+	ImageIcon haticon = new ImageIcon("C:\\programacao\\java\\Eximio\\src\\img\\hat.png");
+	ImageIcon handbagicon = new ImageIcon("C:\\programacao\\java\\Eximio\\src\\img\\handbag.png");	
+	ImageIcon companyicon = new ImageIcon("C:\\programacao\\java\\Eximio\\src\\img\\company.png");
+	ImageIcon peopleicon = new ImageIcon("C:\\programacao\\java\\Eximio\\src\\img\\people.png");
 	//criando frame da tela
 	//construtor
 	public TelaInicial(){
@@ -135,7 +135,7 @@ public class TelaInicial extends JFrame{
 						(txt_login.getText().indexOf("@")>=1 && 
 						(txt_login.getText().indexOf(".")>=1
 								))&& txt_login.getText().length() < 50) {
-					System.out.println("Email Valido");
+					//System.out.println("Email Valido");
 					validaEmail = true;
 					email= txt_login.getText();//coloco o texto do Jtextfield dentro da variavel	
 				}
@@ -162,7 +162,7 @@ public class TelaInicial extends JFrame{
 					//procurando dentro do banco de dados o usuario
 					Select procura = new Select();
 					if(procura.procuraUsuario(login)){
-						System.out.println("Encontrei");
+						//System.out.println("Encontrei");
 						tela.setVisible(false);
 						new TelaUsuario().tela.setVisible(true);
 						
