@@ -34,11 +34,11 @@ public class TelaInicial extends JFrame{
 	private JButton btn_educacao,btn_PequenaEmpresa,btn_GrandeEmpresa,btn_UsoPessoal;
 	JFrame tela;
 	JLabel Jimagem;
-	ImageIcon icon = new ImageIcon("C:\\Lucas campos\\Java\\Eximio\\src\\img\\cadeado.png");
-	ImageIcon haticon = new ImageIcon("C:\\Lucas campos\\Java\\Eximio\\src\\img\\hat.png");
-	ImageIcon handbagicon = new ImageIcon("C:\\Lucas campos\\Java\\Eximio\\src\\img\\handbag.png");	
-	ImageIcon companyicon = new ImageIcon("C:\\Lucas campos\\Java\\Eximio\\src\\img\\company.png");
-	ImageIcon peopleicon = new ImageIcon("C:\\Lucas campos\\Java\\Eximio\\src\\img\\people.png");
+	ImageIcon icon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\cadeado.png");
+	ImageIcon haticon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\hat.png");
+	ImageIcon handbagicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\handbag.png");	
+	ImageIcon companyicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\company.png");
+	ImageIcon peopleicon = new ImageIcon("C:\\Lucas c\\TrabalhoFinal\\src\\img\\people.png");
 	//criando frame da tela
 	//construtor
 	public TelaInicial(){
@@ -163,6 +163,10 @@ public class TelaInicial extends JFrame{
 					Select procura = new Select();
 					if(procura.procuraUsuario(login)){
 						System.out.println("Encontrei");
+						tela.setVisible(false);
+						new TelaUsuario().tela.setVisible(true);
+						
+						
 					}else{
 						JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
 					}
@@ -180,8 +184,7 @@ public class TelaInicial extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				tela.setVisible(false);
-				new TelaCadastro();
+				
 				
 			}
 		});
@@ -199,7 +202,8 @@ public class TelaInicial extends JFrame{
 		
 	public static void main(String[] args){
 		new TelaInicial().tela.setVisible(true);;
-		
+		 
+	
 	}
 
 }
