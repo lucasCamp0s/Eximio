@@ -201,8 +201,8 @@ public class TelaInicial extends JFrame{
 	
 		
 	public static void main(String[] args){
-		new TelaInicial().tela.setVisible(true);;
-		 
+	new TelaInicial().tela.setVisible(true);
+		
 	
 	}
 

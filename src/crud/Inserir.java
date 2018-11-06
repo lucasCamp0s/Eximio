@@ -41,11 +41,11 @@ public class Inserir {
 		}
 		return false;
 	}
-	public boolean cadastrarArquivo(Blob a) {
+	public boolean cadastrarArquivo(byte[] a) {
 
 
 		//criacao do comando a ser executado pelo banco de dados
-		String insertSql  = "INSERT INTO arquivos VALUES(?,?);";
+		String insertSql  = "INSERT INTO arquivos VALUES(?,?,?);";
 
 
 		//abertura da conexã usando a classe ja montada
@@ -55,7 +55,10 @@ public class Inserir {
 			PreparedStatement ps = (PreparedStatement) conexao.prepareStatement(insertSql);
 			//passando os valores para ser salvos no banco de dados
 			//ps.setByte(1, a);
-			ps.setString(2, email);
+			ps.setString(1, "Descricao");
+			ps.setBytes(2, a);
+			ps.setString(3, email);
+			
 
 			//Execução do comando de banco de dados e teste do que retorna
 			if(ps.executeUpdate() !=0) {

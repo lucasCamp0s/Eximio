@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import crud.Inserir;
 import manipulandoArquivo.LendoArquivo;
 
 
@@ -80,21 +81,13 @@ public class TelaUsuario extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				//abre o explorador de arquivos*/
-				String caminho = null;
-				JFileChooser abrir = new JFileChooser();  //cria o from do explorer
-				int retorno = abrir.showOpenDialog(null);  //caso algo for selecionado
-				if (retorno==JFileChooser.APPROVE_OPTION)  {
-					caminho = abrir.getSelectedFile().getAbsolutePath(); //pega a url
-					System.out.println(caminho);//printa o caminho
-					LendoArquivo la = new LendoArquivo();
-					//System.out.println(la.lerArquivo(caminho));
-
+				
+				 new Inserir().cadastrarArquivo(new LendoArquivo().selecionarArquivo());	
 				}
 
-				
 
 
-			}
+			
 		});
 
 		//adicionados os btn do menu
