@@ -1,12 +1,7 @@
 package crud;
 
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.Blob;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import bancoDeDados.ConexaoBanco;
 import usuario.Pessoa;
@@ -29,7 +24,7 @@ public class Inserir {
 			ps.setString(1,  p.getNome());
 			ps.setString(2, p.getEmail());
 			ps.setString(3, p.getSenha());
-			email = p.getEmail();
+			this.email = p.getEmail();
 			//Execução do comando de banco de dados e teste do que retorna
 			if(ps.executeUpdate() !=0) {
 				//ou seja se alterou uma linha, entao o insert deu certo
@@ -45,7 +40,7 @@ public class Inserir {
 
 
 		//criacao do comando a ser executado pelo banco de dados
-		String insertSql  = "INSERT INTO arquivos VALUES(?,?,?);";
+		String insertSql  = "INSERT INTO arquivos VALUES(null,?,?,?);";
 
 
 		//abertura da conexã usando a classe ja montada

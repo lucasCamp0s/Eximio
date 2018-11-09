@@ -1,9 +1,8 @@
 package bancoDeDados;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import com.mysql.jdbc.Connection;
 
 public class ConexaoBanco {
 
@@ -17,11 +16,11 @@ public class ConexaoBanco {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			String nomeServidor = /*"127.0.0.1:3307";*/"esn509vmysql"; // caminhao do bd
+			String nomeServidor = "127.0.0.1:3307";/*"esn509vmysql";*/ // caminhao do bd
 			String mydatabase = "eximio"; // nome do seu bancp de dados
 			String url = "jdbc:mysql://" + nomeServidor + "/" + mydatabase;
-			String username = /*"root";*/"aluno"; //nome usuario do bd
-			String password = "Senai1234"; //senha
+			String username = "root";/*"aluno";*/ //nome usuario do bd
+			String password = ""; //senha
 			
 			connection = (Connection) DriverManager.getConnection(url, username, password);
 		
@@ -39,7 +38,7 @@ public class ConexaoBanco {
 			System.out.println("o driver nao foi encontrado");
 			return null;
 		}catch(SQLException e) {
-			System.out.println("Não foi possivel conectara ao banco de Dados");
+			System.out.println("Não foi possivel conectar ao banco de Dados");
 			return null;
 		}
 		

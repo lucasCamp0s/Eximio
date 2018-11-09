@@ -24,7 +24,7 @@ public class Select {
 		boolean tipoRetorno = false;
 			
 				try {
-					connection = new ConexaoBanco().openConexao();
+					connection = (Connection) new ConexaoBanco().openConexao();
 					
 					String selectSql = "SELECT * FROM pessoa where  email = ? and senha = ? ";
 					PreparedStatement ps = (PreparedStatement) connection.prepareStatement(selectSql);
@@ -45,7 +45,5 @@ public class Select {
 				}
 				return tipoRetorno;
 	}
-	public static void main(String[] args){
-		new Select();
-	}
+	
 }

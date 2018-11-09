@@ -26,7 +26,11 @@ public class LendoArquivo {
 		FileInputStream file ;
 		
 		fileChooser.setMultiSelectionEnabled(false);
+		fileChooser.setFileFilter(new FileNameExtensionFilter("png", "png"));
+		fileChooser.setFileFilter(new FileNameExtensionFilter("jpeg", "jpg"));
+
 		javax.swing.filechooser.FileFilter filter = new javax.swing.filechooser.FileFilter(){
+			
 			public boolean accept(File f){
 				return fileChooser.isDirectorySelectionEnabled() || fileChooser.getName().toLowerCase().endsWith(".txt");
 				

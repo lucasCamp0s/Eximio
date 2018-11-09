@@ -1,11 +1,14 @@
 package usuario;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -19,6 +22,7 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import crud.Inserir;
+import crud.SelectArquivos;
 import manipulandoArquivo.LendoArquivo;
 
 
@@ -26,12 +30,12 @@ public class TelaUsuario extends JFrame {
 
 	JFrame tela;
 	JPanel painel;
-	JLabel imagemDousuario;
+	JLabel imagemDousuario,lbl_Arquivo;
 	JButton btn_adicionarArquivo,btn_sair,btn_arquivos,btn_Adicionar;
 	JMenuBar menu;
 	JMenu jm_configuracao;
 	JMenuItem jmi_conta,jmi_help,jmi_sobre;
-
+	ImageIcon arquivo;
 	public TelaUsuario() {
 
 		tela = new JFrame("área do usuario");//criando frame da tela
@@ -69,9 +73,26 @@ public class TelaUsuario extends JFrame {
 		btn_arquivos.setVerticalAlignment(SwingConstants.BOTTOM);
 		tela.add(btn_arquivos);
 		btn_arquivos.setBounds(0,200,150,100);
+		btn_arquivos.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				//add image icon
+				Login l = new Login("lucas@gmail.com","deuCerto");
+				SelectArquivos sa = new SelectArquivos();
+				sa.retornaArquivo(l);
+				arquivo = new ImageIcon(sa.getArquivos());
+				//criando um lbl para colocar o image icon
+				
+				lbl_Arquivo = new JLabel(arquivo);
+				tela.add(lbl_Arquivo);
+				lbl_Arquivo.setBounds(200, 200, 150, 150);
+				
+			}
+		});
 
 
-		//btn para adicionar arquivos no vos
+		//btn para adicionar arquivos 
 		btn_Adicionar = new JButton("Add File");
 		btn_Adicionar.setVerticalAlignment(SwingConstants.BOTTOM);
 		tela.add(btn_Adicionar);
@@ -101,6 +122,9 @@ public class TelaUsuario extends JFrame {
 		painel.setSize(150,800);
 		painel.setBackground(Color.red);
 		tela.add(painel);
+		
+		
+		
 
 		//configurando a tela
 
@@ -114,6 +138,8 @@ public class TelaUsuario extends JFrame {
 	}
 
 	
-
+	public static void main(String args[]) {
+		new TelaUsuario().tela.setVisible(true);;
+	}
 
 }
